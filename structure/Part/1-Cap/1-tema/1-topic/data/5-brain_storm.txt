@@ -1,0 +1,9 @@
+    Dennis Ritchie
+    UNIX
+    BCPL
+    Martin Richards
+    Ken Thompson
+    Popularidade dos Microcomputadores
+    Ausência de Padrões
+    ANSI - American National Standards institute
+    Compiladores

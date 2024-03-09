@@ -1,0 +1,5 @@
+Inventada por Dennis Ritchie, C reulta do desenvolvimento de uma linguagem chamada BCPL, com bases em UNIX.
+    Por Anos o padrão C foi a versão fornecida com o SO UNIX.
+    Com a Popularidade dos Microcomputadores, muitos usuários desenvolveram suas próprias versões de C
+    Embora essas versões fossem até certo ponto compatíveis, faltava um padrão para a Linguagem
+    ANSI (American National Standards Institute) em 1983 cria comit~e com o popósito padronizativo.
