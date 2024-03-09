@@ -1,5 +1,5 @@
 class Topico:
-    def __init__(self, tema, tese, def_tese, solution, brain_storm, frases, tab):
+    def __init__(self, tema, tese, def_tese, solution, brain_storm, frases, tab, img):
         self.tema = tema
         self.tese = tese
         self.def_tese = def_tese
@@ -7,6 +7,7 @@ class Topico:
         self.brain_storm = brain_storm
         self.frases = frases
         self.tab = tab
+        self.img = img
 
     def definir_tema(self, new_tema):
         self.tema = new_tema
@@ -28,6 +29,9 @@ class Topico:
     
     def definir_tab(self, new_tab):
         self.tab = new_tab
+    
+    def definir_img(self, new_img):
+        self.img = new_img
 
     def imprimir_informacoes(self):
         print(f"\nTema - : {self.tema}")
@@ -35,11 +39,17 @@ class Topico:
         print(f"\n\tDefence - : {self.def_tese}")
         print(f"\n\tSolution - : {self.solution}")
         print(f"\nBrain_Storm - : {self.brain_storm}\n")
+        
         cout=1
         for i in (self.frases):
             print(f"Frase - : {cout} {i}")
             cout = cout +1
-        print(f"\nTab - : {self.tab}\n")
+
+        print(f"\nTab - :")
+        print(f"\n{self.tab}\n")
+
+        plt.imshow(img_)
+        plt.show()
 
 #_____________________________________________________________________/
 
@@ -90,26 +100,28 @@ def read_lines_file(file_line_read):
 
 
 
-file_ = 'data\\tema.txt'
+file_ = 'data\\1-tema.txt'
 tema_ = read_file(file_)
-file_ = 'data\\tese.txt'
+file_ = 'data\\2-tese.txt'
 tese_ = read_file(file_)
-file_ = 'data\\def_tese.txt'
+file_ = 'data\\3-def_tese.txt'
 def_tese_ = read_file(file_)
-file_ = 'data\\solution.txt'
+file_ = 'data\\4-solution.txt'
 solution_ = read_file(file_)
-file_ = 'data\\brain_storm.txt'
+file_ = 'data\\5-brain_storm.txt'
 brain_storm_ = read_lines_file(file_)
-file_ = 'data\\frases.txt'
+file_ = 'data\\6-frases.txt'
 frases_ = read_lines_file(file_)
 
-tab_ =  {
-    'Campo1': ['registe1', 'registe2', 'registe3', 'registe4'],
-    'Campo2': [1, 2, 3, 4],
-    'Campo3': ['registe1', 'registe2', 'registe3', 'registe4']
-}
+import pandas as pd
+file_ = 'data\\7-Pasta1.xlsx'
+tab_ = pd.read_excel(file_)
 
-#print(tab)
+import matplotlib.pyplot as plt 
+import matplotlib.image as mpimg
+file_ = 'data\\8-img1.jpg'
+img_ = mpimg.imread(file_)
+
 
 topic1 = Topico(
     tema=tema_, 
@@ -118,5 +130,6 @@ topic1 = Topico(
     solution=solution_, 
     brain_storm=brain_storm_,
     frases=frases_,
-    tab=tab_)
+    tab=tab_,
+    img=img_)
 topic1.imprimir_informacoes()
